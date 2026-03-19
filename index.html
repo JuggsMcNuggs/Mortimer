@@ -9,22 +9,22 @@
 body{background:#0d1a0d;color:#d0e8d0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-thumb{background:#2a4a2a;border-radius:4px}
-.app{max-width:460px;margin:0 auto;padding:12px 16px 20px;min-height:100vh}
+.app{max-width:900px;margin:0 auto;padding:12px 24px 20px;min-height:100vh}
 .hdr{text-align:center;margin-bottom:4px}
 .hdr h1{font-size:34px;font-family:Georgia,serif;font-style:italic;color:#4ADE80;text-shadow:0 0 20px #4ADE8033}
 .hdr .sub{font-size:10px;letter-spacing:3px;color:#5a8a5a;text-transform:uppercase;margin-top:2px}
 .hdr .day{font-size:13px;color:#6a9a6a;margin-top:2px}
-.tnav{display:flex;gap:8px;margin:8px 0 4px}
+.tnav{display:flex;gap:8px;margin:8px auto 4px;max-width:460px}
 .tnav button{flex:1;padding:8px 0;background:#0f240f;border:1px solid #2a4a2a;border-radius:10px;color:#6EE7B7;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
 .tnav button:hover{background:#1a3a1a;border-color:#3a5a3a}
-.mzone{position:relative;text-align:center;padding:0 8px}
-.mimg{width:200px;height:auto;margin-top:20px;transition:filter .5s ease}
+.mzone{position:relative;text-align:center;flex-shrink:0}
+.mimg{width:200px;height:auto;transition:filter .5s ease}
 .mimg.dim{filter:brightness(.85) saturate(.7)}
-.bub{position:absolute;top:4px;left:50%;transform:translateX(-50%);z-index:10;background:#1e3a1e;border:1px solid #3a6a3a;border-radius:14px;padding:9px 16px;max-width:85%;font-size:13px;color:#c0dcc0;text-align:center;line-height:1.4;box-shadow:0 4px 16px #00000044;display:none}
+.bub{position:absolute;top:-12px;left:50%;transform:translateX(-50%);z-index:10;background:#1e3a1e;border:1px solid #3a6a3a;border-radius:14px;padding:9px 16px;max-width:240px;font-size:13px;color:#c0dcc0;text-align:center;line-height:1.4;box-shadow:0 4px 16px #00000044;display:none;white-space:normal}
 .bub.on{display:block;animation:pop .25s ease-out}
 .bwrap{text-align:center;margin:2px 0 8px}
 .badge{display:inline-block;font-size:13px;padding:3px 14px;border-radius:20px}
-.sbox{background:#0f240f;border:1px solid #1e3a1e;border-radius:14px;padding:12px 14px;margin-bottom:8px}
+.sbox{background:#0f240f;border:1px solid #1e3a1e;border-radius:14px;padding:12px 14px;margin-bottom:8px;max-width:460px;margin-left:auto;margin-right:auto}
 .br{margin-bottom:8px}
 .bl{display:flex;justify-content:space-between;margin-bottom:2px;font-size:12px}
 .bl .n{color:#8aaa8a}
@@ -34,14 +34,20 @@ body{background:#0d1a0d;color:#d0e8d0;font-family:'Segoe UI',Tahoma,Geneva,Verda
 .hr{margin-top:6px;padding-top:6px;border-top:1px solid #1e3a1e;display:flex;justify-content:space-between;font-size:12px}
 .hr .n{color:#5a8a5a}
 .hr .v{font-weight:700}
-.orbs{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:8px}
-.orow{display:flex;gap:12px;justify-content:center}
-.orb{width:58px;height:58px;border-radius:50%;background:#1e3a1e;border:1.5px solid #3a6a3a;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;padding:0;gap:1px;font-family:inherit}
-.orb:hover:not(:disabled){background:#2a5a2a;border-color:#5a9a5a;transform:scale(1.08);box-shadow:0 0 12px #4ADE8022}
+.mort-row{display:flex;align-items:center;justify-content:space-between;margin:0 0 4px;padding:0 10px}
+.side-col{display:flex;flex-direction:column;gap:16px;align-items:center}
+.orb{width:100px;height:100px;border-radius:50%;background:#1e3a1e;border:2px solid #3a6a3a;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;padding:0;gap:3px;font-family:inherit}
+.orb:hover:not(:disabled){background:#2a5a2a;border-color:#5a9a5a;transform:scale(1.06);box-shadow:0 0 14px #4ADE8022}
 .orb:disabled{background:#152015;border-color:#1e2e1e;opacity:.4;cursor:not-allowed}
-.orb .i{font-size:22px;line-height:1}
-.orb .l{font-size:8px;color:#7aaa7a;line-height:1;margin-top:2px}
+.orb .i{font-size:36px;line-height:1}
+.orb .l{font-size:12px;color:#7aaa7a;line-height:1;margin-top:2px;font-weight:600}
 .orb:disabled .l{color:#3a5a3a}
+.meds-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:460px;margin:8px auto 0;padding:16px 20px;background:#1e3a1e;border:2px solid #3a6a3a;border-radius:28px;cursor:pointer;transition:all .15s;font-family:inherit}
+.meds-btn:hover:not(:disabled){background:#2a5a2a;border-color:#5a9a5a;box-shadow:0 0 14px #4ADE8022}
+.meds-btn:disabled{background:#152015;border-color:#1e2e1e;opacity:.4;cursor:not-allowed}
+.meds-btn .i{font-size:28px}
+.meds-btn .l{font-size:15px;color:#c0dcc0;font-weight:600}
+.meds-btn:disabled .l{color:#3a5a3a}
 .ft{text-align:center;padding:4px 0;font-size:9px;color:#2a4a2a;letter-spacing:2px}
 .sv{padding:12px 20px 20px}
 .bbk{background:none;border:none;color:#4ADE80;font-size:14px;cursor:pointer;padding:8px 0;margin-bottom:8px;font-family:inherit}
@@ -235,8 +241,8 @@ function doMeds(){
 function doSoil(){
   var m=Math.round(S.hydration);
   var r=m>85?"Soaking wet. Do NOT water.":m>65?"Damp. Good for a few days.":m>45?"Drying out. Keep an eye.":m>25?"Top inch dry. Water soon.":"Bone dry. Water me now.";
-  S.totals.soil++;alog("Soil check: "+m+"%","🪴","soil");
-  save();draw();say("🪴 "+r);
+  S.totals.soil++;alog("Soil check: "+m+"%","🌱","soil");
+  save();draw();say("🌱 "+r);
 }
 function doReset(){
   if(confirm("Reset Mort? His entire history will be wiped.")){
@@ -277,10 +283,22 @@ function draw(){
   o+='<button onclick="goView(\'stats\')">📊 Stats</button>';
   o+="</div>";
 
+  o+='<div class="mort-row">';
+  o+='<div class="side-col">';
+  o+='<button class="orb" onclick="doWater()"'+(wcd?" disabled":"")+'><span class="i">💧</span><span class="l">Water</span></button>';
+  o+='<button class="orb" onclick="doSun()"><span class="i">☀️</span><span class="l">Sun</span></button>';
+  o+='<button class="orb" onclick="doTalk()"><span class="i">💬</span><span class="l">Talk</span></button>';
+  o+='</div>';
   o+='<div class="mzone">';
   o+='<div class="bub" id="bub"></div>';
   o+='<img class="mimg'+(m==="neglected"?" dim":"")+'" src="'+IMG[m]+'" alt="Mort">';
   o+="</div>";
+  o+='<div class="side-col">';
+  o+='<button class="orb" onclick="doSoil()"><span class="i">🌱</span><span class="l">Soil</span></button>';
+  o+='<button class="orb" onclick="doRotate()"'+(rcd?" disabled":"")+'><span class="i">🔄</span><span class="l">Rotate</span></button>';
+  o+='<button class="orb" onclick="doPrune()"'+(pcd?" disabled":"")+'><span class="i">✂️</span><span class="l">Prune</span></button>';
+  o+='</div>';
+  o+='</div>';
 
   o+='<div class="bwrap"><span class="badge" style="background:'+li.color+'18;color:'+li.color+";border:1px solid "+li.color+'33">'+li.emoji+" "+li.text+"</span></div>";
 
@@ -292,16 +310,7 @@ function draw(){
   o+='<div class="hr"><span class="n">🌿 Overall Health</span><span class="v" style="color:'+hc+'">'+ht+" ("+h+"%)</span></div>";
   o+="</div>";
 
-  o+='<div class="orbs"><div class="orow">';
-  o+='<button class="orb" onclick="doWater()"'+(wcd?" disabled":"")+'><span class="i">💧</span><span class="l">Water</span></button>';
-  o+='<button class="orb" onclick="doSun()"><span class="i">☀️</span><span class="l">Sun</span></button>';
-  o+='<button class="orb" onclick="doTalk()"><span class="i">💬</span><span class="l">Talk</span></button>';
-  o+='<button class="orb" onclick="doSoil()"><span class="i">🪴</span><span class="l">Soil</span></button>';
-  o+='</div><div class="orow">';
-  o+='<button class="orb" onclick="doRotate()"'+(rcd?" disabled":"")+'><span class="i">🔄</span><span class="l">Rotate</span></button>';
-  o+='<button class="orb" onclick="doPrune()"'+(pcd?" disabled":"")+'><span class="i">✂️</span><span class="l">Prune</span></button>';
-  o+='<button class="orb" onclick="doMeds()"'+(mcd?" disabled":"")+'><span class="i">💊</span><span class="l">'+(isMon?"Meds!":"Meds")+"</span></button>";
-  o+="</div></div>";
+  o+='<button class="meds-btn" onclick="doMeds()"'+(mcd?" disabled":"")+'><span class="i">💊</span><span class="l">'+(isMon?"🎉 Monday Mort Meds! 🎉":"Monday Mort Meds")+"</span></button>";
 
   o+='<div class="ft">LEVICA LAND BOTANICAL DIVISION\u2122 \u00B7 EST. 2026</div>';
   app.innerHTML=o;
@@ -341,7 +350,7 @@ function drawStats(app){
     ["💧 Waters",S.totals.water,false],["☀️ Sunlight",S.totals.sun,false],
     ["💬 Talks",S.totals.talk,false],["🔄 Rotations",S.totals.rotate,false],
     ["✂️ Prunes",S.totals.prune,false],["💊 Meds",S.totals.meds,false],
-    ["🪴 Soil checks",S.totals.soil,false],["🌊 Overwaters",S.overwaterCount,S.overwaterCount>0]
+    ["🌱 Soil checks",S.totals.soil,false],["🌊 Overwaters",S.overwaterCount,S.overwaterCount>0]
   ];
   var h='<div class="sv"><button class="bbk" onclick="goView(\'main\')">\u2190 Back to Mort</button>';
   h+="<h2>📊 Stats</h2>";
