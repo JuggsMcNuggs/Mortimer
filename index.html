@@ -135,17 +135,17 @@ function defaults(){
     lastRotated:null,lastPruned:null,lastMeds:null,
     lastDecay:Date.now(),overwaterCount:0,
     totals:{water:0,sun:0,talk:0,rotate:0,prune:0,meds:0,soil:0},
-    born:Date.now(),careLog:[]};
+    born:1742457600000,careLog:[]};
 }
 
 var S=null, view="main", btimer=null, atimer=null, dtimer=null;
 
 async function load(){
-  try{var r=await window.storage.get(SKEY);if(r&&r.value)S=JSON.parse(r.value);else S=defaults();}
+  try{var r=localStorage.getItem(SKEY);if(r)S=JSON.parse(r);else S=defaults();}
   catch(e){S=defaults();}
   draw();startTimers();
 }
-async function save(){try{await window.storage.set(SKEY,JSON.stringify(S));}catch(e){}}
+async function save(){try{localStorage.setItem(SKEY,JSON.stringify(S));}catch(e){}}
 
 function hp(){return Math.round(S.hydration*.3+S.sunlight*.25+S.happiness*.25+S.pruning*.2)}
 function mood(){
